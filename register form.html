@@ -5,11 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Form</title>
     <link rel="stylesheet" href="register.css"> <!-- Linking CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Register</h2> <!-- This text will appear above the form -->
+        <h2>Register</h2>
         
         <form onsubmit="validateForm(event)">
             <label for="name">Name:</label>
@@ -39,8 +86,22 @@
                 return false;
             }
 
-            alert("Form submitted successfully!");
-            return true;
+            // Generate a unique user ID (for demo purposes, a random number)
+            const userId = Math.floor(Math.random() * 1000000); // Random ID
+            alert("Registration successful! Your User ID is: " + userId);
+
+            // Store user info (could be done via local storage, a database, etc.)
+            const userInfo = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                userId: userId
+            };
+
+            // Simulating storing user data (this is just a demo, implement a proper storage solution)
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+            // Redirect to the user dashboard
+            window.location.href = "dashboard.html"; // Change this to your actual dashboard page
         }
     </script>
 
