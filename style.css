@@ -72,14 +72,36 @@ img {
     margin-top: 20px;
 }
 
-.image-container img {
-    width: 200px;
-    height: auto;
+
+footer {
+    background-color: #282c34; /* Dark background */
+    color: white;
+    padding: 20px 0; /* Padding for top and bottom */
+    text-align: center; /* Center text */
 }
 
-/* For mobile devices */
-@media (max-width: 768px) {
-    .image-container img {
-        width: 150px; /* Smaller width for mobile */
-    }
+.footer-container {
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the footer */
+    padding: 0 20px; /* Padding for sides */
 }
+
+.social-icons {
+    margin: 10px 0; /* Margin for social icons */
+}
+
+.social-icons a {
+    color: #61dafb; /* Light blue color for links */
+    margin: 0 10px; /* Space between links */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+p {
+    margin: 5px 0; /* Margin for paragraphs */
+}
+
+
